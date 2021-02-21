@@ -1,15 +1,9 @@
 {
-  "extends": "tslint:recommended",
+  "extends": ["tslint:recommended"],
   "rulesDirectory": [
     "codelyzer"
   ],
   "rules": {
-    "align": {
-      "options": [
-        "parameters",
-        "statements"
-      ]
-    },
     "array-type": false,
     "arrow-return-shorthand": true,
     "curly": true,
@@ -36,8 +30,12 @@
       true,
       {
         "order": [
-          "static-field",
-          "instance-field",
+          "public-static-field",
+          "protected-static-field",
+          "private-static-field",
+          "public-instance-field",
+          "protected-instance-field",
+          "private-instance-field",
           "static-method",
           "instance-method"
         ]
