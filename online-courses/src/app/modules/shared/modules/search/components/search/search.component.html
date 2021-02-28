@@ -1,1 +1,12 @@
-<p>search works!</p>
+<input type="text"
+			 id="search"
+			 name="search"
+			 placeholder="text to search"
+			 [(ngModel)]="searchText"
+			 class="search-input">
+<button mat-raised-button
+				color="primary"
+				(click)="onSearch(searchText)">
+	<mat-icon>search</mat-icon>
+	Search
+</button>

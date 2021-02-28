@@ -1,0 +1,16 @@
+@import "~src/_variables";
+
+.courses {
+  background-color: $background-grey;
+  padding: 20px;
+}
+
+.add-course {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.load-more {
+  display: flex;
+  justify-content: center;
+}

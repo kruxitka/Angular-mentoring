@@ -1,0 +1,25 @@
+@import "~src/_variables";
+
+.course-card {
+  background-color: $white;
+  padding: 15px;
+  border-radius: 4px;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+}
+
+.course-info {
+  display: flex;
+}
+
+.course-buttons {
+  display: flex;
+  flex-direction: row;
+  height: 36px;
+  align-items: center;
+}
+
+.course-button {
+  margin: 10px;
+}
