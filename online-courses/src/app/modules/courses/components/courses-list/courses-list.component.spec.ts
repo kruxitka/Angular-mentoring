@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 
 import { CoursesListComponent } from './courses-list.component';
 
@@ -21,5 +22,13 @@ describe('CoursesListComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('onDeleteCourse function is called', () => {
+    const deleteCourse = spyOn(component, 'onDeleteCourse');
+
+    fixture.debugElement.query(By.css('app-course-item')).triggerEventHandler('deleteCourse', null);
+    fixture.detectChanges();
+    expect(deleteCourse).toHaveBeenCalled();
   });
 });
