@@ -9,15 +9,15 @@ import { Course } from '../../interfaces/course.interface';
 export class CourseItemComponent implements OnInit {
   @Input()
   public course!: Course;
-  @Output() deleteCourse = new EventEmitter<Course>();
+  @Output() deleteCourse: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  public onDelete(course: Course): void {
-    this.deleteCourse.emit(course);
+  public delete(): void {
+    this.deleteCourse.emit(this.course.id);
   }
 
 }

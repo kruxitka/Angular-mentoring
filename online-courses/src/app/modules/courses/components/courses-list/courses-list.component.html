@@ -1,5 +1,5 @@
 <div *ngFor="let course of coursesList">
 	<app-course-item [course]="course"
-									 (deleteCourse)="deleteCourse(course)">
+									 (deleteCourse)="onDeleteCourse($event)">
 	</app-course-item>
 </div>
