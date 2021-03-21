@@ -2,14 +2,16 @@
 	<div>
 		<div class="course-info">
 			<h2>
-				{{ course?.title }}
+				{{ course?.title | uppercase }}
 			</h2>
-			<span>
-				<mat-icon>access_time</mat-icon>{{ course?.duration }}
-			</span>
-			<span>
-				<mat-icon>calendar_today</mat-icon>{{ course?.creationDate }}
-			</span>
+			<div>
+				<span>
+					<mat-icon>access_time</mat-icon>{{ course?.duration }}
+				</span>
+				<span>
+					<mat-icon>calendar_today</mat-icon>{{ course?.creationDate | date }}
+				</span>
+			</div>
 		</div>
 		<p>{{ course?.description }}</p>
 	</div>

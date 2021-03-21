@@ -5,6 +5,7 @@ import * as components from './components';
 import * as shared from '../shared/modules';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { HighlightNewestDirective } from './directives/highlight-newest.directive';
 
 const SHARED = [shared.BreadcrumbsModule, shared.SearchModule];
 
@@ -13,7 +14,8 @@ const SHARED = [shared.BreadcrumbsModule, shared.SearchModule];
     components.CoursesComponent,
     components.CoursesListComponent,
     components.AddCourseComponent,
-    components.CourseItemComponent
+    components.CourseItemComponent,
+    HighlightNewestDirective
   ],
   imports: [
     ...SHARED,
