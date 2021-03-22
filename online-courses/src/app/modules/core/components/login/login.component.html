@@ -1,9 +1,12 @@
 <div class="login-wrapper">
-  <span class="login">
+  <span class="login"
+        routerLink="/login">
     <mat-icon>person</mat-icon>
     User login
   </span>
-  <button mat-raised-button color="accent">
+  <button mat-raised-button
+          color="accent"
+          (click)="logout()">
     <mat-icon>logout</mat-icon>
     Log off
   </button>

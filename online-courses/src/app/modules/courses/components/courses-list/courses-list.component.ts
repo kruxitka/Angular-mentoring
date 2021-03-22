@@ -19,7 +19,6 @@ export class CoursesListComponent implements OnInit {
 
   public onDeleteCourse(courseId: string): void {
     this.coursesList$ = this.coursesService.deleteCourse(courseId);
-    console.log(courseId);
   }
 
 }

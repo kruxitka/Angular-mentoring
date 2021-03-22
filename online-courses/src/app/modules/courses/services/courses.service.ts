@@ -52,11 +52,11 @@ export class CoursesService {
     return of(...this.coursesList.filter(el => el.id === courseId));
   }
 
-  public updateCourse(course: Course) {
-
+  public updateCourse(course: Course): Observable<Course[]> {
+    return of(this.coursesList = this.coursesList.map((el: Course) => el.id === course.id ? el = course : el));
   }
 
-  public deleteCourse(courseId: string) {
-    return of(this.coursesList.filter(el => el.id !== courseId));
+  public deleteCourse(courseId: string): Observable<Course[]> {
+    return of(this.coursesList = this.coursesList.filter(el => el.id !== courseId));
   }
 }

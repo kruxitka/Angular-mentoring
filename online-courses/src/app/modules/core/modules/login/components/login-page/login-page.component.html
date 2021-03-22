@@ -1,0 +1,27 @@
+<div class="login-page">
+	<div class="login-form">
+		<h2>Login</h2>
+		<div class="labels">
+			<span>E-mail:</span>
+			<span class="required">*required</span>
+		</div>
+		<mat-form-field appearance="outline">
+			<input matInput
+						 placeholder="Enter e-mail" />
+		</mat-form-field>
+		<div class="labels">
+			<span>Password:</span>
+			<span class="required">*required</span>
+		</div>
+		<mat-form-field appearance="outline">
+			<input matInput
+						 placeholder="Enter password" />
+		</mat-form-field>
+		<div class="form-submit">
+			<a href="#">Forgot password?</a>
+			<button mat-raised-button
+							color="accent"
+							(click)="login()">Login</button>
+		</div>
+	</div>
+</div>
