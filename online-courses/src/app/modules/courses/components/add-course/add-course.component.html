@@ -1,1 +1,27 @@
-<p>add-course works!</p>
+<div class="add-course">
+	<div class="add-course-form">
+		<h2>New Course</h2>
+		<div class="labels">
+			<span>Title:</span>
+			<span class="required">*required</span>
+		</div>
+		<mat-form-field appearance="outline">
+			<input matInput
+						 placeholder="Text input" />
+		</mat-form-field>
+		<div class="labels">
+			<span>Description:</span>
+			<span class="required">*required</span>
+		</div>
+		<mat-form-field>
+			<textarea matInput cols="30" rows="10"
+						 placeholder="Add description"></textarea>
+		</mat-form-field>
+		<div class="form-submit">
+			<a href="#">Forgot password?</a>
+			<button mat-raised-button
+							color="accent"
+							(click)="onSave()">Save</button>
+		</div>
+	</div>
+</div>

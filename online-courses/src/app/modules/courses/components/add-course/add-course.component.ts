@@ -12,4 +12,8 @@ export class AddCourseComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public onSave() {
+    
+  }
+
 }

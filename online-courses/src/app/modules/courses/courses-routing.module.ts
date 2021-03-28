@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CoursesComponent } from './components';
+import { CoursesComponent, AddCourseComponent } from './components';
 
 const routes: Routes = [
   { path: '', component: CoursesComponent },
+  { path: 'add-course', component: AddCourseComponent },
 ];
 
 @NgModule({
