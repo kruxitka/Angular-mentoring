@@ -1,0 +1,27 @@
+@import '~src/_variables';
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f8f8;
+  box-shadow: 0 0 15px 15px #f8f8f8;
+  padding: 20px;
+
+  &-header {
+    margin: 20px auto;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  &-text {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  &-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}

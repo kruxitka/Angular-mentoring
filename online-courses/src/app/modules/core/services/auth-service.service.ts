@@ -14,15 +14,19 @@ export class AuthService {
   constructor() { }
 
   public login(user: User = this.user): void {
-    localStorage.setItem(user.firstName, JSON.stringify(user));
+    localStorage.setItem(user.id, JSON.stringify(user));
   }
 
-  public logout(userName = this.user.firstName): void {
-    localStorage.removeItem(userName);
-    console.log('logged out ' + userName);
+  public logout(user: User = this.user): void {
+    localStorage.removeItem(user.id);
+    console.log('logged out ' + user.firstName);
   }
 
-  public getUserInfo(userName = this.user.firstName) {
-    return localStorage.getItem(userName);
+  public isAuthenticated(): boolean {
+    return true;
+  }
+
+  public getUserInfo(userId = this.user.id) {
+    return localStorage.getItem(userId);
   }
 }

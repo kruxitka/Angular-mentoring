@@ -1,0 +1,13 @@
+<div class="dialog">
+	<div class="dialog-header">{{data.title}}</div>
+	<div class="dialog-text">{{data.text}}</div>
+	<div class="dialog-buttons">
+		<button class="dialog-confirm"
+						mat-raised-button
+						color="primary"
+						(click)="onConfirmation()">{{data.confirm}}</button>
+		<button class="dialog-cancel"
+						mat-raised-button
+						(click)="onCancel()">{{data.cancel}}</button>
+	</div>
+</div>

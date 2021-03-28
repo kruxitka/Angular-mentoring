@@ -7,7 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { HighlightNewestDirective } from './directives/highlight-newest.directive';
 
-const SHARED = [shared.BreadcrumbsModule, shared.SearchModule];
+const SHARED = [shared.BreadcrumbsModule, shared.SearchModule, shared.ConfirmationModalModule];
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ const SHARED = [shared.BreadcrumbsModule, shared.SearchModule];
     components.CoursesListComponent,
     components.AddCourseComponent,
     components.CourseItemComponent,
-    HighlightNewestDirective
+    HighlightNewestDirective,
   ],
   imports: [
     ...SHARED,
