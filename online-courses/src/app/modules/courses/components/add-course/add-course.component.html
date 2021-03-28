@@ -14,11 +14,43 @@
 			<span class="required">*required</span>
 		</div>
 		<mat-form-field>
-			<textarea matInput cols="30" rows="10"
-						 placeholder="Add description"></textarea>
+			<textarea matInput
+								rows="5"
+								appearance="outline"
+								placeholder="Add description"></textarea>
+		</mat-form-field>
+		<div class="labels">
+			<span>Duration:</span>
+			<span class="required">*required</span>
+		</div>
+		<mat-form-field appearance="outline"
+										class="duration">
+			<input matInput
+						 placeholder="minutes" />
+		</mat-form-field>
+		<div class="labels">
+			<span>Date:</span>
+			<span class="required">*required</span>
+		</div>
+		<mat-form-field appearance="outline"
+										class="date">
+			<input matInput
+						 placeholder="MM/DD/YY" />
+		</mat-form-field>
+		<div class="labels">
+			<span>Authors:</span>
+			<span class="required">*required</span>
+		</div>
+		<mat-form-field appearance="outline"
+										class="authors">
+			<input matInput
+						 placeholder="Start typing" />
 		</mat-form-field>
 		<div class="form-submit">
-			<a href="#">Forgot password?</a>
+			<button mat-raised-button
+							(click)="onCancel()"
+							routerLink="/"
+							class="cancel">Cancel</button>
 			<button mat-raised-button
 							color="accent"
 							(click)="onSave()">Save</button>
