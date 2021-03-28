@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPageComponent implements OnInit {
 
+  public isAuthenticated = false;
+
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
@@ -15,6 +17,7 @@ export class LoginPageComponent implements OnInit {
 
   public login(): void {
     this.authService.login();
+    this.isAuthenticated = this.authService.isAuthenticated();
     console.log('logged in successfully');
   }
 
