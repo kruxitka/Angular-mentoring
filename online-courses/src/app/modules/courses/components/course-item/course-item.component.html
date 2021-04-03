@@ -1,8 +1,9 @@
-<div class="course-card">
+<div class="course-card" [ngClass]="{'rated-background': course?.topRated}">
 	<div>
 		<div class="course-info">
 			<h2>
 				{{ course?.title | uppercase }}
+				<mat-icon *ngIf="course?.topRated" class="star-icon">star</mat-icon>
 			</h2>
 			<div>
 				<span>
