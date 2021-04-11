@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Course } from '../interfaces/course.interface';
@@ -6,6 +7,7 @@ import { Course } from '../interfaces/course.interface';
   providedIn: 'root'
 })
 export class CoursesService {
+  public apiUrl: string;
 
   public coursesList: Course[] = [
     {
@@ -38,10 +40,13 @@ export class CoursesService {
     }
   ];
 
-  constructor() { }
+  constructor(private http: HttpClient) {
+    this.apiUrl = 'http://localhost:3004';
+  }
 
   public getCoursesList(): Observable<Course[]> {
-    return of(this.coursesList);
+    return this.http.get<Course[]>(`${this.apiUrl}/courses`);
+    // return of(this.coursesList);
   }
 
   public createCourse(course: Course): void {
