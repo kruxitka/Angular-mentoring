@@ -20,7 +20,7 @@ export class CoursesListComponent implements OnInit {
       id: '2',
       title: 'Course title 2',
       duration: 75,
-      creationDate: '2020-07-01T20:15:30.000Z',
+      creationDate: '2019-07-01T20:15:30.000Z',
       topRated: true,
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     },
