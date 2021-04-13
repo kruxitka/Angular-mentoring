@@ -13,4 +13,12 @@
 .load-more {
   display: flex;
   justify-content: center;
+  background-color: $white;
+  padding: 15px;
+  border-radius: 4px;
+  margin: 20px auto;
+}
+
+.add-course-button {
+  color: $white;
 }
