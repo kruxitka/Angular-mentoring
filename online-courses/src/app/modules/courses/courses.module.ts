@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { HighlightNewestDirective } from './directives/highlight-newest.directive';
 import { IfAuthenticatedDirective } from './directives/if-authenticated.directive';
 import { MatInputModule } from '@angular/material/input';
+import { HttpClientModule } from '@angular/common/http';
 
 const SHARED = [shared.BreadcrumbsModule, shared.SearchModule, shared.ConfirmationModalModule];
 
@@ -27,6 +28,7 @@ const SHARED = [shared.BreadcrumbsModule, shared.SearchModule, shared.Confirmati
     MatButtonModule,
     MatIconModule,
     MatInputModule,
+    HttpClientModule,
   ]
 })
 export class CoursesModule { }

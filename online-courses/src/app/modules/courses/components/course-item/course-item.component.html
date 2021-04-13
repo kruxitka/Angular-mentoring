@@ -1,14 +1,14 @@
 <div class="course-card">
 	<div class="course-info">
 		<h2>
-			{{ course?.title | uppercase }}
+			{{ course?.name | uppercase }}
 		</h2>
 		<div class="course-info-details">
 			<span class="icon">
-				<mat-icon>access_time</mat-icon>{{ course?.duration }}
+				<mat-icon>access_time</mat-icon>{{ course?.length }}
 			</span>
 			<span class="icon">
-				<mat-icon>calendar_today</mat-icon>{{ course?.creationDate | date }}
+				<mat-icon>calendar_today</mat-icon>{{ course?.date | date }}
 			</span>
 		</div>
 	</div>
