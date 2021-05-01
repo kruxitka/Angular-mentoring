@@ -9,6 +9,7 @@ import { HighlightNewestDirective } from './directives/highlight-newest.directiv
 import { IfAuthenticatedDirective } from './directives/if-authenticated.directive';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 const SHARED = [shared.BreadcrumbsModule, shared.SearchModule, shared.ConfirmationModalModule];
 
@@ -24,6 +25,7 @@ const SHARED = [shared.BreadcrumbsModule, shared.SearchModule, shared.Confirmati
   imports: [
     ...SHARED,
     CommonModule,
+    FormsModule,
     CoursesRoutingModule,
     MatButtonModule,
     MatIconModule,
