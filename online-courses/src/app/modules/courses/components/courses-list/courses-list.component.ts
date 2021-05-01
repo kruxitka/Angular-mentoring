@@ -24,8 +24,9 @@ export class CoursesListComponent implements OnInit {
     const dialogRef = this.dialog.open(ConfirmationComponent, {
       width: '500px',
       data: {
-        title: `Do you realy want to delete this course?`,
-        confirm: 'Delete',
+        title: 'Delete course?',
+        text: `Do you realy want to delete this course?`,
+        confirm: 'Yes, delete',
         cancel: 'Cancel'
       }
     });

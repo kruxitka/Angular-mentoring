@@ -1,13 +1,15 @@
 <div class="dialog">
 	<div class="dialog-header">{{data.title}}</div>
+	<div class="separator"></div>
 	<div class="dialog-text">{{data.text}}</div>
+	<div class="separator"></div>
 	<div class="dialog-buttons">
-		<button class="dialog-confirm"
-						mat-raised-button
-						color="primary"
-						(click)="onConfirmation()">{{data.confirm}}</button>
 		<button class="dialog-cancel"
-						mat-raised-button
-						(click)="onCancel()">{{data.cancel}}</button>
+				mat-raised-button
+				(click)="onCancel()">{{data.cancel}}</button>
+		<button class="dialog-confirm"
+				mat-raised-button
+				color="accent"
+				(click)="onConfirmation()">{{data.confirm}}</button>
 	</div>
 </div>
