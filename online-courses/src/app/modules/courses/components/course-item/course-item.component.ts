@@ -9,7 +9,8 @@ import { Course } from '../../interfaces/course.interface';
 export class CourseItemComponent implements OnInit {
   @Input()
   public course!: Course;
-  @Output() deleteCourse: EventEmitter<string> = new EventEmitter<string>();
+  @Output()
+  public deleteCourse: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
 

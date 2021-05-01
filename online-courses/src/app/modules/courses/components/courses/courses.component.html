@@ -1,18 +1,16 @@
 <app-breadcrumbs *appIfAuthenticated></app-breadcrumbs>
 <section class="courses">
-	<app-search></app-search>
+	<app-search (search)="onSearchCourse($event)"></app-search>
 	<div class="add-course">
 		<button mat-raised-button
-						color="primary">
+				color="accent"
+				class="add-course-button">
 			<mat-icon>add</mat-icon>
 			Add course
 		</button>
 	</div>
-	<app-courses-list></app-courses-list>
+	<app-courses-list [coursesList]="coursesList"></app-courses-list>
 	<div class="load-more">
-		<button mat-button
-						color="accent">
-			Load more
-		</button>
+		<a href="#">Load more</a>
 	</div>
 </section>
