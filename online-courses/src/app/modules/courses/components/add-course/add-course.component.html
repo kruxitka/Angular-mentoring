@@ -19,33 +19,9 @@
 								class="description-input"
 								placeholder="Add description"></textarea>
 		</mat-form-field>
-		<div class="labels">
-			<span>Duration:</span>
-			<span class="required">*required</span>
-		</div>
-		<mat-form-field appearance="outline"
-										class="duration">
-			<input matInput
-						 placeholder="minutes" />
-		</mat-form-field>
-		<div class="labels">
-			<span>Date:</span>
-			<span class="required">*required</span>
-		</div>
-		<mat-form-field appearance="outline"
-										class="date">
-			<input matInput
-						 placeholder="MM/DD/YY" />
-		</mat-form-field>
-		<div class="labels">
-			<span>Authors:</span>
-			<span class="required">*required</span>
-		</div>
-		<mat-form-field appearance="outline"
-										class="authors">
-			<input matInput
-						 placeholder="Start typing" />
-		</mat-form-field>
+		<app-duration></app-duration>
+		<app-date></app-date>
+    <app-authors></app-authors>
 		<div class="form-submit">
 			<button mat-raised-button
 							(click)="onCancel()"
@@ -53,7 +29,8 @@
 							class="cancel">Cancel</button>
 			<button mat-raised-button
 							color="accent"
-							(click)="onSave()">Save</button>
+							(click)="onSave()"
+							class="save-btn">Save</button>
 		</div>
 	</div>
 </div>

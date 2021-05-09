@@ -10,6 +10,7 @@ import { MatInputModule } from '@angular/material/input';
 import { DurationPipe } from './pipes/duration.pipe';
 import { OrderByPipe } from './pipes/order-by.pipe';
 import { IfAuthenticatedModule } from '../core/modules/if-auth';
+import { FormsModule } from '@angular/forms';
 
 const SHARED = [shared.BreadcrumbsModule, shared.SearchModule, shared.ConfirmationModalModule];
 
@@ -21,11 +22,15 @@ const SHARED = [shared.BreadcrumbsModule, shared.SearchModule, shared.Confirmati
     components.CourseItemComponent,
     HighlightNewestDirective,
     DurationPipe,
-    OrderByPipe
+    OrderByPipe,
+    components.DateComponent,
+    components.DurationComponent,
+    components.AuthorsComponent
   ],
   imports: [
     ...SHARED,
     CommonModule,
+    FormsModule,
     CoursesRoutingModule,
     MatButtonModule,
     MatIconModule,
