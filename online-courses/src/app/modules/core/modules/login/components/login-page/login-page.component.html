@@ -7,7 +7,8 @@
 		</div>
 		<mat-form-field appearance="outline">
 			<input matInput
-						 placeholder="Enter e-mail" />
+				   [(ngModel)]="email"
+				   placeholder="Enter e-mail" />
 		</mat-form-field>
 		<div class="labels">
 			<span>Password:</span>
@@ -15,13 +16,15 @@
 		</div>
 		<mat-form-field appearance="outline">
 			<input matInput
-						 placeholder="Enter password" />
+				   [(ngModel)]="password"
+				   placeholder="Enter password" />
 		</mat-form-field>
 		<div class="form-submit">
 			<a href="#">Forgot password?</a>
 			<button mat-raised-button
-							color="accent"
-							(click)="login()">Login</button>
+					color="accent"
+					(click)="login()"
+					routerLink="/courses">Login</button>
 		</div>
 	</div>
 </div>

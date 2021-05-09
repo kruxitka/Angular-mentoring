@@ -1,0 +1,15 @@
+@import "~src/_variables";
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+}
+
+.authors {
+  width: 300px;
+}
+
+.required {
+  font-size: 12px;
+  color: $text-grey;
+}

@@ -14,6 +14,7 @@
   display: flex;
   flex-direction: column;
   width: 700px;
+  box-shadow: 0px 4px 12px 1px rgba(34, 60, 80, 0.2);
 }
 
 .form-submit {
@@ -37,19 +38,10 @@
   color: $text-grey;
 }
 
-.duration {
-  width: 150px;
-}
-
-.date {
-  width: 150px;
-}
-
-.authors {
-  width: 300px;
-}
-
 .description-input {
   width: 100%;
-  // border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.save-btn {
+  color: $white;
 }
