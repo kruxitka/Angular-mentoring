@@ -1,5 +1,5 @@
-import { AuthService } from './../../core/services/auth-service.service';
 import { Directive, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
+import { AuthService } from 'src/app/modules/core/services/auth-service.service';
 
 @Directive({
   selector: '[appIfAuthenticated]'
