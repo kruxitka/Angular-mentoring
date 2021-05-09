@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class LoginPageComponent implements OnInit {
 
   public isAuthenticated = false;
+  public password = '';
+  public email = '';
 
   constructor(private authService: AuthService) { }
 
