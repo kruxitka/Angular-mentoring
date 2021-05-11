@@ -1,6 +1,7 @@
 <div class="add-course">
 	<div class="add-course-form">
-		<h2>New Course</h2>
+		<h2 *ngIf="isAddMode">New Course</h2>
+    <h2 *ngIf="!isAddMode">Edit Course</h2>
 		<div class="labels">
 			<span>Title:</span>
 			<span class="required">*required</span>

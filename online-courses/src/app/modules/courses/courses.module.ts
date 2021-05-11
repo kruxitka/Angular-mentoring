@@ -11,6 +11,7 @@ import { DurationPipe } from './pipes/duration.pipe';
 import { OrderByPipe } from './pipes/order-by.pipe';
 import { IfAuthenticatedModule } from '../core/modules/if-auth';
 import { FormsModule } from '@angular/forms';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const SHARED = [shared.BreadcrumbsModule, shared.SearchModule, shared.ConfirmationModalModule];
 
@@ -25,7 +26,8 @@ const SHARED = [shared.BreadcrumbsModule, shared.SearchModule, shared.Confirmati
     OrderByPipe,
     components.DateComponent,
     components.DurationComponent,
-    components.AuthorsComponent
+    components.AuthorsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     ...SHARED,

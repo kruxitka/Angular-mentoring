@@ -9,9 +9,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 export class DurationComponent implements OnInit {
   public duration!: number;
 
-  constructor() {
-    this.duration = 100;
-  }
+  constructor() {}
 
   ngOnInit(): void {
   }

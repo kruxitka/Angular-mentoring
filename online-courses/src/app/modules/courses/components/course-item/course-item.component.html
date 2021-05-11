@@ -21,7 +21,9 @@
 		<div class="course-buttons">
 			<button mat-raised-button
 					color="primary"
-					class="course-button">
+					class="course-button"
+          [routerLink]="course.id"
+          (click)="edit()">
 				<mat-icon>edit</mat-icon>
 				Edit
 			</button>

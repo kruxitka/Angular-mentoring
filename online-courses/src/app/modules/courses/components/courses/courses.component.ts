@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FilterPipe } from 'src/app/modules/shared/modules/search/pipes/filter.pipe';
 import { Observable } from 'rxjs';
 import { CoursesService } from '../../services/courses.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-courses',
@@ -11,11 +12,13 @@ import { CoursesService } from '../../services/courses.service';
 })
 export class CoursesComponent implements OnInit {
   public coursesList!: Course[];
+  public selectedCourseId!: string;
 
-  constructor(private filterPipe: FilterPipe, private coursesService: CoursesService) {}
+  constructor(private filterPipe: FilterPipe, private coursesService: CoursesService, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.coursesService.getCoursesList().subscribe(courses => this.coursesList = courses);
+    this.selectedCourseId = this.activatedRoute.snapshot.params.id;
   }
 
   public onSearchCourse(searchText: string): any {

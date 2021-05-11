@@ -11,6 +11,6 @@
              [(ngModel)]="duration"
              value="duration" />
     </mat-form-field>
-    <span class="duration-value">{{ duration | duration }}</span>
+    <span *ngIf="duration" class="duration-value">{{ duration | duration }}</span>
   </div>
 </div>

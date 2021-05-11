@@ -12,6 +12,8 @@ export class CourseItemComponent implements OnInit {
   public course!: Course;
   @Output()
   public deleteCourse: EventEmitter<string> = new EventEmitter<string>();
+  @Output()
+  public editCourse: EventEmitter<Course> = new EventEmitter<Course>();
 
   constructor() { }
 
@@ -20,6 +22,10 @@ export class CourseItemComponent implements OnInit {
 
   public delete(): void {
     this.deleteCourse.emit(this.course.id);
+  }
+
+  public edit(): void {
+    this.editCourse.emit(this.course);
   }
 
 }
