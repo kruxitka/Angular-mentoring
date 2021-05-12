@@ -4,6 +4,7 @@ import { CoreRoutingModule } from './core-routing.module';
 import * as components from './components';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { IfAuthenticatedModule } from './modules/if-auth';
 
 const COMPONENTS = [
   components.LogoComponent,
@@ -15,7 +16,7 @@ const COMPONENTS = [
 
 @NgModule({
   declarations: [...COMPONENTS],
-  imports: [CommonModule, CoreRoutingModule, MatButtonModule, MatIconModule],
+  imports: [CommonModule, CoreRoutingModule, MatButtonModule, MatIconModule, IfAuthenticatedModule],
   exports: [components.LayoutComponent],
 })
 export class CoreModule { }

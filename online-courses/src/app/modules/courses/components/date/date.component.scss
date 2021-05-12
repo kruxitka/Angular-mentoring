@@ -1,0 +1,15 @@
+@import "~src/_variables";
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+}
+
+.date {
+  width: 150px;
+}
+
+.required {
+  font-size: 12px;
+  color: $text-grey;
+}
