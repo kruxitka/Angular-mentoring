@@ -13,16 +13,28 @@ import { ActivatedRoute } from '@angular/router';
 export class CoursesComponent implements OnInit {
   public coursesList!: Course[];
   public selectedCourseId!: string;
+  public start = 0;
+  public count = 5;
 
   constructor(private filterPipe: FilterPipe, private coursesService: CoursesService, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.coursesService.getCoursesList().subscribe(courses => this.coursesList = courses);
+    // this.coursesService.getCoursesList(this.start, this.count).subscribe(courses => this.coursesList = courses);
+    this.getCourses();
     this.selectedCourseId = this.activatedRoute.snapshot.params.id;
   }
 
   public onSearchCourse(searchText: string): any {
     this.coursesList = this.filterPipe.transform(this.coursesList, searchText);
+  }
+
+  public getCourses() {
+    this.coursesService.getCoursesList(this.start, this.count).subscribe(courses => this.coursesList = courses);
+  }
+
+  public loadMore() {
+    this.start = this.start + 1;
+    this.getCourses();
   }
 
 }

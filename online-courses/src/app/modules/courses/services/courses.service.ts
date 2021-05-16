@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Course } from '../interfaces/course.interface';
@@ -13,8 +13,9 @@ export class CoursesService {
     this.apiUrl = 'http://localhost:3004';
   }
 
-  public getCoursesList(): Observable<Course[]> {
-    return this.http.get<Course[]>(`${this.apiUrl}/courses`);
+  public getCoursesList(start: number, count: number): Observable<Course[]> {
+    const params = new HttpParams().set('start', start.toString()).set('count', count.toString());
+    return this.http.get<Course[]>(`${this.apiUrl}/courses`, {params});
   }
 
   public createCourse(course: Course): Observable<Course[]> {
