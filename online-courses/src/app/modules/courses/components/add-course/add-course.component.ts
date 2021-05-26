@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-course',
@@ -6,13 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-course.component.scss']
 })
 export class AddCourseComponent implements OnInit {
+  public courseId!: string;
+  public isAddMode!: boolean;
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    this.courseId = this.activatedRoute.snapshot.params.id;
+    this.isAddMode = !this.courseId;
   }
 
-  public onSave(): void {}
+  public onSave(): void {
+    this.router.navigate(['/']);
+  }
 
   public onCancel(): void {}
 
