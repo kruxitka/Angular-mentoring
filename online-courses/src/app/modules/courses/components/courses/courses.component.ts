@@ -1,9 +1,13 @@
+import { getCourses } from './../../../../store/actions';
 import { Course } from './../../interfaces/course.interface';
 import { Component, OnInit } from '@angular/core';
 import { FilterPipe } from 'src/app/modules/shared/modules/search/pipes/filter.pipe';
 import { Observable } from 'rxjs';
 import { CoursesService } from '../../services/courses.service';
 import { ActivatedRoute } from '@angular/router';
+import { select, Store } from '@ngrx/store';
+import { CoursesState, Selectors } from 'src/app/store';
+import { skipWhile, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-courses',
@@ -14,10 +18,21 @@ export class CoursesComponent implements OnInit {
   public coursesList!: Course[];
   public selectedCourseId!: string;
 
-  constructor(private filterPipe: FilterPipe, private coursesService: CoursesService, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private store: Store<CoursesState.State>,
+    private filterPipe: FilterPipe,
+    private coursesService: CoursesService,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.coursesService.getCoursesList().subscribe(courses => this.coursesList = courses);
+    // this.coursesService.getCoursesList().subscribe(courses => this.coursesList = courses);
+    this.store.dispatch(getCourses());
+    this.store.pipe(
+      select(Selectors.selectCourses),
+      tap(console.log),
+      skipWhile((courses) => !courses?.length)
+    ).subscribe(courses => this.coursesList = courses);
     this.selectedCourseId = this.activatedRoute.snapshot.params.id;
   }
 
