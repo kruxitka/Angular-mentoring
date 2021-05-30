@@ -21,7 +21,7 @@
 					  placeholder="Add description"></textarea>
 		</mat-form-field>
 		<app-duration></app-duration>
-		<app-date></app-date>
+		<app-date (courseDateCreation)="getDate($event)"></app-date>
     <app-authors></app-authors>
 		<div class="form-submit">
 			<button mat-raised-button

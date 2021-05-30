@@ -7,7 +7,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { HighlightNewestDirective } from './directives/highlight-newest.directive';
 import { MatInputModule } from '@angular/material/input';
-import { HttpClientModule } from '@angular/common/http';
 import { DurationPipe } from './pipes/duration.pipe';
 import { OrderByPipe } from './pipes/order-by.pipe';
 import { IfAuthenticatedModule } from '../core/modules/if-auth';
@@ -38,7 +37,6 @@ const SHARED = [shared.BreadcrumbsModule, shared.SearchModule, shared.Confirmati
     MatButtonModule,
     MatIconModule,
     MatInputModule,
-    HttpClientModule,
     IfAuthenticatedModule
   ]
 })

@@ -6,3 +6,10 @@ export interface Course {
   topRated: boolean;
   description: string;
 }
+
+export interface CoursesRequestParams {
+  start?: number;
+  count?: number;
+  sort?: string;
+  textFragment?: string;
+}

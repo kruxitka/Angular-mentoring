@@ -9,6 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class AddCourseComponent implements OnInit {
   public courseId!: string;
   public isAddMode!: boolean;
+  public date!: string;
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router) { }
 
@@ -22,5 +23,9 @@ export class AddCourseComponent implements OnInit {
   }
 
   public onCancel(): void {}
+
+  public getDate(date: string): void {
+    this.date = date;
+  }
 
 }

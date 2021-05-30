@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { ConfirmationModalModule } from 'src/app/modules/shared/modules/confirmation-modal';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -16,7 +17,7 @@ import { FormsModule } from '@angular/forms';
     LoginRoutingModule,
     MatInputModule,
     MatButtonModule,
-    ConfirmationModalModule
+    ConfirmationModalModule,
   ]
 })
 export class LoginModule { }
