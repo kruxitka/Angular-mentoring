@@ -8,7 +8,8 @@
 		</div>
 		<mat-form-field appearance="outline">
 			<input matInput
-				   placeholder="Text input" />
+				    placeholder="Text input"
+            [(ngModel)]="title"/>
 		</mat-form-field>
 		<div class="labels">
 			<span>Description:</span>
@@ -18,7 +19,8 @@
 			<textarea matInput
 					  rows="5"
 					  class="description-input"
-					  placeholder="Add description"></textarea>
+					  placeholder="Add description"
+            [(ngModel)]="description"></textarea>
 		</mat-form-field>
 		<app-duration></app-duration>
 		<app-date (courseDateCreation)="getDate($event)"></app-date>

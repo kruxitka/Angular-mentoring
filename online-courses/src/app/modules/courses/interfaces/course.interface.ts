@@ -1,10 +1,16 @@
 export interface Course {
-  id: string;
+  id?: string;
   name: string;
   date: Date | string;
   length: number;
-  topRated: boolean;
   description: string;
+  authors: Authors;
+  topRated: boolean;
+}
+
+export interface Authors {
+  id: number;
+  name: string;
 }
 
 export interface CoursesRequestParams {
