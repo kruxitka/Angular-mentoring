@@ -2,6 +2,8 @@ import { Course } from './../../interfaces/course.interface';
 import { Component, OnInit } from '@angular/core';
 import { CoursesService } from '../../services/courses.service';
 import { ActivatedRoute } from '@angular/router';
+import { Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged, filter, take, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-courses',
@@ -13,17 +15,30 @@ export class CoursesComponent implements OnInit {
   public selectedCourseId!: string;
   public start = 0;
   public count = 5;
+  private searchSub$ = new Subject<string>();
 
   constructor(private coursesService: CoursesService, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.getCourses();
     this.selectedCourseId = this.activatedRoute.snapshot.params.id;
+    this.searchCourses();
   }
 
   public onSearchCourse(searchText: string): void {
-    this.coursesService.getCoursesList({ textFragment: searchText })
-      .subscribe(courses => this.coursesList = courses);
+    this.searchSub$.next(searchText);
+  }
+
+  private searchCourses(): void {
+    this.searchSub$.subscribe(res => console.log(res))
+    this.searchSub$.pipe(
+      filter(res => res.length > 2),
+      debounceTime(1000),
+      distinctUntilChanged()
+    ).subscribe((searchText: string) => {
+      this.coursesService.getCoursesList({ textFragment: searchText })
+        .subscribe(courses => this.coursesList = courses);
+    });
   }
 
   public getCourses(): void {

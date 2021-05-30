@@ -22,8 +22,8 @@
 					  placeholder="Add description"
             [(ngModel)]="description"></textarea>
 		</mat-form-field>
-		<app-duration></app-duration>
-		<app-date (courseDateCreation)="getDate($event)"></app-date>
+		<app-duration (courseDuration)="getDuration($event)"></app-duration>
+		<app-date (courseDate)="getDate($event)"></app-date>
     <app-authors></app-authors>
 		<div class="form-submit">
 			<button mat-raised-button

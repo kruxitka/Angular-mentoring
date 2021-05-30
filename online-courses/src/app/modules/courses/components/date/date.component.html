@@ -6,6 +6,6 @@
 	<mat-form-field appearance="outline"
 									class="date">
 		<input matInput
-					 placeholder="MM/DD/YY" [(ngModel)]="date" />
+					 placeholder="MM/DD/YY" [(ngModel)]="date" (input)="courseDateCreation()"/>
 	</mat-form-field>
 </div>

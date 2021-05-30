@@ -27,7 +27,6 @@ export class AddCourseComponent implements OnInit {
   ngOnInit(): void {
     this.courseId = this.activatedRoute.snapshot.params.id;
     this.isAddMode = !this.courseId;
-
   }
 
   public onSave(): void {
@@ -44,6 +43,10 @@ export class AddCourseComponent implements OnInit {
 
   public getDate(date: string): void {
     this.date = date;
+  }
+
+  public getDuration(duration: number): void {
+    this.length = duration;
   }
 
 }

@@ -9,7 +9,8 @@
       <input matInput
              placeholder="minutes"
              [(ngModel)]="duration"
-             value="duration" />
+             value="duration"
+             (input)="getDuration()" />
     </mat-form-field>
     <span *ngIf="duration" class="duration-value">{{ duration | duration }}</span>
   </div>

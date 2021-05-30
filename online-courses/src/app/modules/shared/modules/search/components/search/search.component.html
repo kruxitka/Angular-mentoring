@@ -1,6 +1,7 @@
 <input type="text"
+       #coursesSearchInput
 			 id="search"
 			 name="search"
 			 placeholder="Type to search"
-			 [(ngModel)]="searchText"
-			 class="search-input">
+			 class="search-input"
+       (keyup)="onSearch($event.target.value)">
