@@ -4,3 +4,7 @@ export interface User {
   lastName: string;
 }
 
+export interface UserToken {
+  token: string;
+}
+

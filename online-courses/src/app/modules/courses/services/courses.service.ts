@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { CoursesRequestParams } from './../interfaces/course.interface';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Course } from '../interfaces/course.interface';
 
 @Injectable({
@@ -13,8 +14,23 @@ export class CoursesService {
     this.apiUrl = 'http://localhost:3004';
   }
 
-  public getCoursesList(): Observable<Course[]> {
-    return this.http.get<Course[]>(`${this.apiUrl}/courses`);
+  public getCoursesList(coursesParams: CoursesRequestParams): Observable<Course[]> {
+    let params = new HttpParams();
+
+    if (coursesParams?.start) {
+      params = params.set('start', coursesParams.start.toString());
+    }
+    if (coursesParams?.count) {
+      params = params.set('count', coursesParams.count.toString());
+    }
+    if (coursesParams?.sort) {
+      params = params.set('sort', coursesParams.sort);
+    }
+    if (coursesParams?.textFragment) {
+      params = params.set('textFragment', coursesParams.textFragment);
+    }
+
+    return this.http.get<Course[]>(`${this.apiUrl}/courses`, { params });
   }
 
   public createCourse(course: Course): Observable<Course[]> {

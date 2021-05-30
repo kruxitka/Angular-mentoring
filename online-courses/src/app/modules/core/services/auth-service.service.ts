@@ -1,32 +1,41 @@
-import { User } from './../interfaces/user';
+import { UserToken } from './../interfaces/user';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  public user = {
-    id: '1',
-    firstName: 'John',
-    lastName: 'Doe',
-  };
+  public apiUrl: string;
+  public isUserLoggedIn!: boolean;
 
-  constructor() { }
-
-  public login(user: User = this.user): void {
-    localStorage.setItem(user.id, JSON.stringify(user));
+  constructor(private http: HttpClient) {
+    this.isUserLoggedIn = false;
+    this.apiUrl = 'http://localhost:3004';
   }
 
-  public logout(user: User = this.user): void {
-    localStorage.removeItem(user.id);
-    console.log('logged out ' + user.firstName);
+  public login(login: string, password: string): Observable<UserToken> {
+    this.isUserLoggedIn = true;
+    return this.http.post<UserToken>(`${this.apiUrl}/auth/login`, { login, password });
+  }
+
+  public setUser(token: string): void {
+    localStorage.setItem('access_token', token);
+  }
+
+  public logout(): void {
+    localStorage.removeItem('access_token');
+    console.log('logged out');
+    this.isUserLoggedIn = false;
+    window.location.reload();
   }
 
   public isAuthenticated(): boolean {
-    return true;
+    return this.isUserLoggedIn;
   }
 
-  public getUserInfo(userId = this.user.id) {
-    return localStorage.getItem(userId);
+  public getUserInfo(): any {
+    return localStorage.getItem('access_token');
   }
 }

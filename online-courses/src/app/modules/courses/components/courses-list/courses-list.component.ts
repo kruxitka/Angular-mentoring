@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
 import { Course } from '../../interfaces/course.interface';
 import { CoursesService } from '../../services/courses.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -10,15 +10,20 @@ import { ConfirmationComponent } from 'src/app/modules/shared/modules/confirmati
   templateUrl: './courses-list.component.html',
   styleUrls: ['./courses-list.component.scss']
 })
-export class CoursesListComponent implements OnInit {
-
-  public coursesList$: Observable<Course[]>;
+export class CoursesListComponent implements OnInit, OnDestroy {
+  @Input()
+  public coursesList!: Course[];
+  private sub: Subscription;
 
   constructor(private coursesService: CoursesService, private dialog: MatDialog) {
-    this.coursesList$ = this.coursesService.getCoursesList();
+    this.sub = new Subscription();
   }
 
   ngOnInit(): void {}
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
+  }
 
   public onDeleteCourse(courseId: string): void {
     const dialogRef = this.dialog.open(ConfirmationComponent, {
@@ -32,9 +37,13 @@ export class CoursesListComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        this.coursesList$ = this.coursesService.deleteCourse(courseId);
+        this.sub.add(this.coursesService.deleteCourse(courseId).subscribe(courses => this.coursesList = courses));
       }
     });
+  }
+
+  public coursesTrackBy(index: number, course: Course): Course {
+    return course;
   }
 
 }

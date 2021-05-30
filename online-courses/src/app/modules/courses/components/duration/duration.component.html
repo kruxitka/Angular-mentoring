@@ -1,0 +1,16 @@
+<div class="duration">
+  <div class="labels">
+    <span>Duration:</span>
+    <span class="required">*required</span>
+  </div>
+  <div class="duration-input">
+    <mat-form-field appearance="outline"
+                    class="duration">
+      <input matInput
+             placeholder="minutes"
+             [(ngModel)]="duration"
+             value="duration" />
+    </mat-form-field>
+    <span *ngIf="duration" class="duration-value">{{ duration | duration }}</span>
+  </div>
+</div>
